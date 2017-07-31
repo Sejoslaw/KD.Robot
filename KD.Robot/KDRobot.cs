@@ -6,7 +6,7 @@
     public class KDRobot
     {
         /// <summary>
-        /// Executes given commands.
+        /// Executes given commands. 
         /// </summary>
         /// <param name="commands"></param>
         public void Execute(string commands)
