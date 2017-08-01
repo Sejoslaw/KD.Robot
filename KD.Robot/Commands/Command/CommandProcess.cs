@@ -30,7 +30,7 @@ namespace KD.Robot.Commands.Command
 
         private void StartProcess(KDRobot robot, string processName)
         {
-            Process process = Process.Start(processName);
+            robot.CurrentProcess = Process.Start(processName);
         }
     }
 }
