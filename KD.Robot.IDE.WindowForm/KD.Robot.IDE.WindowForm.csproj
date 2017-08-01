@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E0717504-8691-4115-BCF0-6EAA42DCC764}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>KD.Robot.Window</RootNamespace>
-    <AssemblyName>KD.Robot.Window</AssemblyName>
+    <ProjectGuid>{E81B978A-87D1-4F69-9B2E-16B94378BF76}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KD.Robot.IDE.WindowForm</RootNamespace>
+    <AssemblyName>KD.Robot.IDE.WindowForm</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,9 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +38,17 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KDRobotWindow.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +69,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KD.Robot.Window\KD.Robot.Window.csproj">
+      <Project>{e0717504-8691-4115-bcf0-6eaa42dcc764}</Project>
+      <Name>KD.Robot.Window</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KD.Robot\KD.Robot.csproj">
       <Project>{f7506f8c-c618-4cb8-a748-8d359b10774d}</Project>
       <Name>KD.Robot</Name>

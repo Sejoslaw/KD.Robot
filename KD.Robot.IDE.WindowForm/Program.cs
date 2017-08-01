@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace KD.Robot.Window
+namespace KD.Robot.IDE.WindowForm
 {
     static class Program
     {

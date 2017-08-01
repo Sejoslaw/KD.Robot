@@ -1,4 +1,4 @@
-﻿namespace KD.Robot.Window
+﻿namespace KD.Robot.IDE.WindowForm
 {
     partial class MainWindow
     {
@@ -37,6 +37,7 @@
             // 
             // Menu
             // 
+            this.Menu.BackColor = System.Drawing.SystemColors.Control;
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TS_File});
             this.Menu.Location = new System.Drawing.Point(0, 0);
@@ -53,12 +54,15 @@
             // 
             // RTB_Commands
             // 
+            this.RTB_Commands.BackColor = System.Drawing.SystemColors.ControlDark;
             this.RTB_Commands.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RTB_Commands.ForeColor = System.Drawing.SystemColors.Info;
             this.RTB_Commands.Location = new System.Drawing.Point(13, 28);
             this.RTB_Commands.Name = "RTB_Commands";
             this.RTB_Commands.Size = new System.Drawing.Size(568, 292);
             this.RTB_Commands.TabIndex = 1;
             this.RTB_Commands.Text = "";
+            this.RTB_Commands.TextChanged += new System.EventHandler(this.RTB_Commands_TextChanged);
             // 
             // B_Execute
             // 
@@ -74,6 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(593, 369);
             this.Controls.Add(this.B_Execute);
             this.Controls.Add(this.RTB_Commands);
@@ -82,7 +87,7 @@
             this.MainMenuStrip = this.Menu;
             this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "KD.Robot";
+            this.Text = "KD.Robot.IDE";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.ResumeLayout(false);
