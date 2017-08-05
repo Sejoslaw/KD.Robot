@@ -17,6 +17,16 @@
         }
 
         /// <summary>
+        /// Simple args[0] split.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        protected string[] toStringArgs(object[] args)
+        {
+            return args[0].ToString().Split(' ');
+        }
+
+        /// <summary>
         /// Execute command after first check for errors.
         /// </summary>
         /// <param name="robot"></param>
