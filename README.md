@@ -9,7 +9,6 @@ Projects:
 Project Name | Description
 -------------|-------------
 **[KD.Robot](KD.Robot)** | Main project
-**[KD.Robot.Window](KD.Robot.Window)** | Classes and methods connected with Windows Forms and IDE
 **[KD.Robot.IDE.WindowForm](KD.Robot.IDE.WindowForm)** | IDE made in Windows Forms
 
 Tasks:
