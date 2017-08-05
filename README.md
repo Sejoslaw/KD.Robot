@@ -18,7 +18,7 @@ Tasks:
 1. Implement simple commands:
 - [x] 	1.1. process - starts new process, ex: process *notepad*;
 - [ ] 	1.2. text - represents Typing a text, ex: text "Hejo";
-- [x] 	1.3. click - represents Mouse Click, ex: (click "File"->"Save As"->"Save") / (click x=500 y=700);
+- [x] 	1.3. mouseClick - represents Mouse Click, ex: mouseClick L -> it will perform single Left Mouse Button Click. mouseClick L 2 -> it will perform double click (2 clicks) with Left Mouse Button.
 - [ ] 	1.4. tab - switch between windows with Alt+Tab, ex: (tab 2) / (tab "Untitled - Notepad")
 - [ ] 	1.5. shortcut - use custom shortcut, ex: shortcut "ctrl+c"
 
