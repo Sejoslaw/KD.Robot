@@ -1,7 +1,7 @@
 KD.Robot
 ===
 
-Robot which will do some work for You in background.
+Robot which will perform some work for You in background.
 
 Projects:
 ---
@@ -18,7 +18,7 @@ Tasks:
 1. Implement simple commands:
 - [x] 	1.1. process - starts new process, ex: process *notepad*;
 - [ ] 	1.2. text - represents Typing a text, ex: text "Hejo";
-- [ ] 	1.3. click - represents Mouse Click, ex: (click "File"->"Save As"->"Save") / (click x=500 y=700);
+- [x] 	1.3. click - represents Mouse Click, ex: (click "File"->"Save As"->"Save") / (click x=500 y=700);
 - [ ] 	1.4. tab - switch between windows with Alt+Tab, ex: (tab 2) / (tab "Untitled - Notepad")
 - [ ] 	1.5. shortcut - use custom shortcut, ex: shortcut "ctrl+c"
 
