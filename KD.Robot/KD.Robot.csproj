@@ -32,18 +32,23 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\CommandDictionary.cs" />
     <Compile Include="Commands\CommandExecuter.cs" />
     <Compile Include="Commands\CommandLoader.cs" />
+    <Compile Include="Commands\Command\CommandMoveCursor.cs" />
     <Compile Include="Commands\Command\CommandProcess.cs" />
+    <Compile Include="Commands\Command\CommandTab.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\CommandParser.cs" />
     <Compile Include="Commands\CommandRegistry.cs" />
     <Compile Include="KDRobot.cs" />
     <Compile Include="KDRobotManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinApi\User32.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

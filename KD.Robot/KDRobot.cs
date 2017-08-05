@@ -13,6 +13,12 @@ namespace KD.Robot
         /// </summary>
         public Process CurrentProcess { get; set; }
 
+        public KDRobot()
+        {
+            // Set default Process
+            this.CurrentProcess = Process.GetCurrentProcess();
+        }
+
         /// <summary>
         /// Executes given commands on this Robot instance.
         /// </summary>

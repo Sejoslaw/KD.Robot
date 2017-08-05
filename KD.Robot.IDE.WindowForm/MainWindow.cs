@@ -24,7 +24,8 @@ namespace KD.Robot.IDE.WindowForm
 
         private void RTB_Commands_TextChanged(object sender, EventArgs e)
         {
-            KDRobotWindow.TextChanged(ref RTB_Commands, Color.Blue);
+            Color originalTextColor = Color.White;
+            KDRobotWindow.TextChanged(ref RTB_Commands, Color.Blue, originalTextColor);
         }
     }
 }

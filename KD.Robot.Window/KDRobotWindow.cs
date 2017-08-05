@@ -17,8 +17,10 @@ namespace KD.Robot.Window
         /// Change key word color.
         /// </summary>
         /// <param name="rtb"></param>
-        public static void TextChanged(ref RichTextBox rtb, Color keyWordColor)
+        public static void TextChanged(ref RichTextBox rtb, Color keyWordColor, Color originalTextColor)
         {
+            rtb.SelectionColor = originalTextColor;
+
             foreach (ICommand command in CommandRegistry.Commands)
                 ChangeKeyWord(command.GetCommandKeyWord(), keyWordColor, 0, ref rtb);
         }

@@ -7,5 +7,7 @@
     class CommandDictionary
     {
         public static readonly string CommandProcessKeyWord = "process";
+        public static readonly string CommandTabKeyWord = "tab";
+        public static readonly string CommandMoveCursorKeyWord = "moveCursor";
     }
 }

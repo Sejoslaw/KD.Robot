@@ -3,13 +3,13 @@
 namespace KD.Robot.Commands.Command
 {
     /// <summary>
-    /// Process Command is used to start new process
+    /// Tab Command is used to change between windows.
     /// </summary>
-    class CommandProcess : CommandBase
+    class CommandTab : CommandBase
     {
         public override string GetCommandKeyWord()
         {
-            return CommandDictionary.CommandProcessKeyWord;
+            return CommandDictionary.CommandTabKeyWord;
         }
 
         public override void ExecuteCommand(KDRobot robot, object[] args)
@@ -19,7 +19,7 @@ namespace KD.Robot.Commands.Command
             if (!(args[0] is string)) return;
 
             var processName = GetProcessName(args[0] as string);
-            StartProcess(robot, processName);
+            SwitchProcess(robot, processName);
         }
 
         private string GetProcessName(string processNameWithStars)
@@ -28,9 +28,15 @@ namespace KD.Robot.Commands.Command
             return ret[1];
         }
 
-        private void StartProcess(KDRobot robot, string processName)
+        private void SwitchProcess(KDRobot robot, string processName)
         {
-            robot.CurrentProcess = Process.Start(processName);
+            Process[] processes = Process.GetProcessesByName(processName);
+
+            if (processes.Length < 1) return;
+
+            Process process = processes[0];
+            bool set = WinApi.User32.SetForegroundWindow(process.Handle);
+            if (set) robot.CurrentProcess = process;
         }
     }
 }
