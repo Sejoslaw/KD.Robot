@@ -12,12 +12,8 @@ namespace KD.Robot.Commands.Command
             return CommandDictionary.CommandProcessKeyWord;
         }
 
-        public override void ExecuteCommand(KDRobot robot, object[] args)
+        public override void ExecCommand(KDRobot robot, object[] args)
         {
-            if (robot == null || args == null) return;
-            if (args.Length < 0) return;
-            if (!(args[0] is string)) return;
-
             var processName = GetProcessName(args[0] as string);
             StartProcess(robot, processName);
         }

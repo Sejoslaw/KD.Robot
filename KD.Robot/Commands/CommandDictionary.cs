@@ -8,6 +8,7 @@
     {
         public static readonly string CommandProcessKeyWord = "process";
         public static readonly string CommandTabKeyWord = "tab";
-        public static readonly string CommandMoveCursorKeyWord = "moveCursor";
+        public static readonly string CommandMouseMoveKeyWord = "mouseMove";
+        public static readonly string CommandMouseClickKeyWord = "mouseClick";
     }
 }

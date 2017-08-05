@@ -20,7 +20,7 @@ namespace KD.Robot.Commands
         {
             var commandExecs = new List<CommandExecuter>();
 
-            var singleCommands = commands.Replace("\n", "").Split(';');
+            var singleCommands = commands.Split('\n');
             foreach (var singleCommand in singleCommands) // Parse each Command
             {
                 if (singleCommand.Equals("")) break;

@@ -36,5 +36,16 @@ namespace KD.Robot.WinApi
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetCursorPos(int x, int y);
+
+        /// <summary>
+        /// This function is useful to simulate mouse buttons and wheel event to screen.
+        /// </summary>
+        /// <param name="dwFlags"> Use MouseEventFlags </param>
+        /// <param name="dx"></param>
+        /// <param name="dy"></param>
+        /// <param name="dwData"></param>
+        /// <param name="dwExtraInfo"></param>
+        [DllImport("user32.dll")]
+        public static extern void mouse_event(uint dwFlags, int dx, int dy, uint dwData, UIntPtr dwExtraInfo);
     }
 }
