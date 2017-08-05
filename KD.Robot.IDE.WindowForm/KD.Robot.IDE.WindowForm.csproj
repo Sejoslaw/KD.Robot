@@ -72,10 +72,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KD.Robot.Window\KD.Robot.Window.csproj">
-      <Project>{e0717504-8691-4115-bcf0-6eaa42dcc764}</Project>
-      <Name>KD.Robot.Window</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KD.Robot\KD.Robot.csproj">
       <Project>{f7506f8c-c618-4cb8-a748-8d359b10774d}</Project>
       <Name>KD.Robot</Name>

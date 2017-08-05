@@ -10,5 +10,7 @@
         public static readonly string CommandTabKeyWord = "tab";
         public static readonly string CommandMouseMoveKeyWord = "mouseMove";
         public static readonly string CommandMouseClickKeyWord = "mouseClick";
+        public static readonly string CommandTypeKeyWord = "type";
+        public static readonly string CommandPressButtonKeyWord = "pressButton";
     }
 }

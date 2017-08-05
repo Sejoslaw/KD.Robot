@@ -15,7 +15,7 @@ namespace KD.Robot.Commands.Command
 
         public override void ExecCommand(KDRobot robot, object[] args)
         {
-            string[] sargs = toStringArgs(args);
+            string[] sargs = ToStringArgs(args);
             string button = sargs[0]; // L - left, R - right, M - middle
             int numberOfClicks = Int32.Parse(sargs.Length < 2 ? "1" : sargs[1]); // number of clicks
 

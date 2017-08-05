@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace KD.Robot.Window
+namespace KD.Robot.Windows.Forms
 {
     /// <summary>
     /// Class which holds methods connected with Windows Forms and KD.Robot

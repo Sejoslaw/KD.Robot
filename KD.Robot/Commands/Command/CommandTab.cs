@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 
 namespace KD.Robot.Commands.Command
 {
@@ -14,8 +17,8 @@ namespace KD.Robot.Commands.Command
 
         public override void ExecCommand(KDRobot robot, object[] args)
         {
-            var processName = GetProcessName(args[0] as string);
-            SwitchProcess(robot, processName);
+            var windowName = GetProcessName(args[0] as string);
+            SwitchProcess(robot, windowName);
         }
 
         private string GetProcessName(string processNameWithStars)
@@ -24,15 +27,14 @@ namespace KD.Robot.Commands.Command
             return ret[1];
         }
 
-        private void SwitchProcess(KDRobot robot, string processName)
+        private void SwitchProcess(KDRobot robot, string windowName)
         {
-            Process[] processes = Process.GetProcessesByName(processName);
+            IEnumerable<Process> process = Process.GetProcesses().Where(p => p.MainWindowTitle.Equals(windowName));
 
-            if (processes.Length < 1) return;
+            if (process.Count() < 1) return; // Wrong title
 
-            Process process = processes[0];
-            bool set = WinApi.User32.SetForegroundWindow(process.Handle);
-            if (set) robot.CurrentProcess = process;
+            Process wantedProcess = process.ToList().ElementAt(0);
+            robot.CurrentProcess = wantedProcess;
         }
     }
 }

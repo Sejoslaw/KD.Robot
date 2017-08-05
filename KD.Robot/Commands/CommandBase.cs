@@ -21,7 +21,7 @@
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        protected string[] toStringArgs(object[] args)
+        protected string[] ToStringArgs(object[] args)
         {
             return args[0].ToString().Split(' ');
         }

@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CommandBase.cs" />
@@ -41,8 +42,10 @@
     <Compile Include="Commands\CommandLoader.cs" />
     <Compile Include="Commands\Command\CommandMouseClick.cs" />
     <Compile Include="Commands\Command\CommandMouseMove.cs" />
+    <Compile Include="Commands\Command\CommandPressButton.cs" />
     <Compile Include="Commands\Command\CommandProcess.cs" />
     <Compile Include="Commands\Command\CommandTab.cs" />
+    <Compile Include="Commands\Command\CommandType.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\CommandParser.cs" />
     <Compile Include="Commands\CommandRegistry.cs" />
@@ -51,7 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinApi\MouseDataFlags.cs" />
     <Compile Include="WinApi\MouseEventFlags.cs" />
+    <Compile Include="WinApi\SetWindowPosFlags.cs" />
     <Compile Include="WinApi\User32.cs" />
+    <Compile Include="Windows\Forms\KDRobotWindow.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿using KD.Robot.Window;
+﻿using KD.Robot.Windows.Forms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;

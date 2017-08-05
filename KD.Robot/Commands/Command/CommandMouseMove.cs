@@ -15,7 +15,7 @@ namespace KD.Robot.Commands.Command
 
         public override void ExecCommand(KDRobot robot, object[] args)
         {
-            string[] sargs = toStringArgs(args);
+            string[] sargs = ToStringArgs(args);
             Point cursorPosition = new Point(Int32.Parse(sargs[0]), Int32.Parse(sargs[1]));
             MoveCursor(robot, ref cursorPosition);
         }
