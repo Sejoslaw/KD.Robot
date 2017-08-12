@@ -28,6 +28,6 @@ TODO:
 ---
 
 - [ ] Save / Load written script.
-- [ ] Add Plugin API and Plugin Loader for writing plugins with custom commands.
+- [x] Add Plugin API and Plugin Loader for writing plugins with custom commands. (Add .dll file to "plugins" folder next to Robot IDE exe file).
 - [ ] Compilers: Windows, Linux, FreeBSD, etc.
 - [ ] Console version (with options: "-f" for file, ex: -f "C:\Dev\command.txt", "-c" for command, ex: -c "process \*notepad\*;").
