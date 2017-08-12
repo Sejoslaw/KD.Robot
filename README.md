@@ -1,7 +1,7 @@
 KD.Robot
 ===
 
-Robot which will perform some work for You. Robots can understand programmed commands. Single Robot should be able to simulate single User behaviour.
+Robot which will perform some work for You. Robots can understand programmed commands. Single Robot should be able to simulate single User behaviour. Currently this project use some basic IDE written in Windows Forms with basic syntax highlighting. IDE as well as Robot behaviours should be platform-independent and should work in the same way on every platform.
 
 Projects:
 ---
