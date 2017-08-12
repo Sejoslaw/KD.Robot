@@ -1,7 +1,7 @@
 KD.Robot
 ===
 
-Robot which will perform some work for You.
+Robot which will perform some work for You. Robots can understand programmed commands. Single Robot should be able to simulate single User behaviour.
 
 Projects:
 ---
@@ -17,11 +17,11 @@ Currently implemented commands:
 
 Command | Description | Example
 --------|-------------|---------
-process | Simulate User opening new file. | process \*notepad\*;
-tab | Simulate User switching between windows. | tab \*WindowName\*;
-mouseMove | Simulate User moving mouse. | mouseMove 100 200
-mouseClick | Simulate User clicking button on mouse. | mouseClick L 2
-type | Simulate User typing text. | type Hello World.;
+process | Simulate User starting new process. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/process.PNG)
+tab | Simulate User switching between windows. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/tab.PNG)
+mouseMove | Simulate User moving mouse. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/mouseMove.PNG)
+mouseClick | Simulate User clicking button on mouse. (two times - optional. By default it will be single click.) | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/mouseClick.PNG)
+type | Simulate User typing text. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/type.PNG)
 
 
 TODO:
@@ -30,4 +30,4 @@ TODO:
 - [ ] Save / Load written script.
 - [ ] Add Plugin API and Plugin Loader for writing plugins with custom commands.
 - [ ] Compilers: Windows, Linux, FreeBSD, etc.
-- [ ] Console version (with options: "-f" for file, ex: -f "C:\Dev\command.txt", "-c" for command, ex: -c "process *notepad*;").
+- [ ] Console version (with options: "-f" for file, ex: -f "C:\Dev\command.txt", "-c" for command, ex: -c "process \*notepad\*;").
