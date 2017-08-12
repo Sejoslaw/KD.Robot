@@ -17,6 +17,7 @@ namespace KD.Robot
         /// <summary>
         /// Dictionary which hold additional variables for this Robot.
         /// It was made on purpose for plugins / additional commands to add various variables to Robot.
+        /// Variable naming convention: "Plugin_PluginName_VariableName"
         /// </summary>
         public IDictionary<string, object> Variables { get; private set; }
 
