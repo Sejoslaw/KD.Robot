@@ -17,11 +17,11 @@ Currently implemented commands:
 
 Command | Description | Example
 --------|-------------|---------
-process | Simulate User starting new process. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/process.PNG)
-tab | Simulate User switching between windows. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/tab.PNG)
-mouseMove | Simulate User moving mouse. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/mouseMove.PNG)
-mouseClick | Simulate User clicking button on mouse. (two times - optional. By default it will be single click.) | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/mouseClick.PNG)
-type | Simulate User typing text. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/type.PNG)
+process \*ProcessName\*; | Simulate User starting new process. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/process.PNG)
+tab \*WindowName\*; | Simulate User switching between windows. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/tab.PNG)
+mouseMove posX posY | Simulate User moving mouse. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/mouseMove.PNG)
+mouseClick \[L-Left\|M-Middle\|R-Right\] [number of clicks - optional] | Simulate User clicking button on mouse. (two times - optional. By default it will be single click.) | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/mouseClick.PNG)
+type Some random text to type by Robot.; | Simulate User typing text. | ![](https://raw.githubusercontent.com/Sejoslaw/KD.Robot/master/img/type.PNG)
 
 
 TODO:
