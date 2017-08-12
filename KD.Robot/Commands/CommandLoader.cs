@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 
 namespace KD.Robot.Commands
@@ -10,6 +11,11 @@ namespace KD.Robot.Commands
     class CommandLoader
     {
         /// <summary>
+        /// Name of a directory which contains additional plugins.
+        /// </summary>
+        private static string PLUGINS_FOLDER = "plugins";
+
+        /// <summary>
         /// Returns a Set with all loaded Commands.
         /// </summary>
         /// <returns></returns>
@@ -18,7 +24,7 @@ namespace KD.Robot.Commands
             ISet<ICommand> commandsSet = new HashSet<ICommand>();
 
             foreach (ICommand comm in GetLocalCommands()) commandsSet.Add(comm);
-            //foreach (ICommand comm in GetPluginCommands()) commandsSet.Add(comm); // For future use when Plugins will be enabled.
+            foreach (ICommand comm in GetPluginsCommands()) commandsSet.Add(comm);
 
             return commandsSet;
         }
@@ -33,14 +39,57 @@ namespace KD.Robot.Commands
 
             // ICommand type
             Type commandType = typeof(ICommand);
-            // Assembly which contains ICommand
-            Assembly commandAssembly = commandType.Assembly;
+            // Load local commands
+            return LoadCommandsFromAssembly(commandType.Assembly);
+        }
+
+        /// <summary>
+        /// Load commands from plugin files.
+        /// </summary>
+        /// <returns></returns>
+        private static ISet<ICommand> GetPluginsCommands()
+        {
+            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            path += "/" + PLUGINS_FOLDER;
+
+            DirectoryInfo pluginDir;
+            if (!Directory.Exists(path)) pluginDir = Directory.CreateDirectory(path);
+            else pluginDir = new DirectoryInfo(path);
+
+            ISet<ICommand> commandsOut = new HashSet<ICommand>();
+
+            foreach (FileInfo pluginFile in pluginDir.GetFiles())
+            {
+                try
+                {
+                    Assembly assembly = Assembly.LoadFrom(pluginFile.DirectoryName);
+                    ISet<ICommand> commands = LoadCommandsFromAssembly(assembly);
+                    foreach (ICommand command in commands) commandsOut.Add(command);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error while loading command from plugin assembly: " + pluginFile.ToString());
+                }
+            }
+
+            return commandsOut;
+        }
+
+        /// <summary>
+        /// Load commands from single given Assembly.
+        /// </summary>
+        /// <param name="assembly"></param>
+        /// <returns></returns>
+        private static ISet<ICommand> LoadCommandsFromAssembly(Assembly assembly)
+        {
+            ISet<ICommand> commandSet = new HashSet<ICommand>();
+
             // All types in current Assembly
-            var types = commandAssembly.GetTypes();
+            var types = assembly.GetTypes();
 
             foreach (Type type in types)
             {
-                if (commandType.IsAssignableFrom(type))
+                if (typeof(ICommand).IsAssignableFrom(type) && !type.IsAbstract)
                 {
                     try
                     {
@@ -49,6 +98,7 @@ namespace KD.Robot.Commands
                     }
                     catch (Exception)
                     {
+                        throw new Exception("Error while loading command: " + type.ToString());
                     }
                 }
             }

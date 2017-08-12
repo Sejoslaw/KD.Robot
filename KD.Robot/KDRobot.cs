@@ -1,4 +1,5 @@
 ﻿using KD.Robot.Commands;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace KD.Robot
@@ -13,10 +14,18 @@ namespace KD.Robot
         /// </summary>
         public Process CurrentProcess { get; set; }
 
+        /// <summary>
+        /// Dictionary which hold additional variables for this Robot.
+        /// It was made on purpose for plugins / additional commands to add various variables to Robot.
+        /// </summary>
+        public IDictionary<string, object> Variables { get; private set; }
+
         public KDRobot()
         {
             // Set default Process
             this.CurrentProcess = Process.GetCurrentProcess();
+            // Set variables
+            this.Variables = new Dictionary<string, object>();
         }
 
         /// <summary>
