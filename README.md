@@ -1,6 +1,10 @@
 KD.Robot
 ===
 
+|Build|
+|-----|
+|[![Build status](https://ci.appveyor.com/api/projects/status/github/Sejoslaw/KD.Robot?svg=true)](https://ci.appveyor.com/api/projects/status/github/Sejoslaw/KD.Robot?svg=true)|
+
 Robot which will perform some work for You. Robots can understand programmed commands. Single Robot should be able to simulate single User behaviour. Currently this project use some basic IDE written in Windows Forms with basic syntax highlighting. IDE as well as Robot behaviours should be platform-independent and should work in the same way on every platform.
 
 Projects:
