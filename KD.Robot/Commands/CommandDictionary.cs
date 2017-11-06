@@ -12,5 +12,6 @@
         public static readonly string CommandMouseClickKeyWord = "mouseClick";
         public static readonly string CommandTypeKeyWord = "type";
         public static readonly string CommandPressButtonKeyWord = "pressButton";
+        public static readonly string CommandSleepKeyWord = "sleep";
     }
 }

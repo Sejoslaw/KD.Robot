@@ -44,6 +44,7 @@
     <Compile Include="Commands\Command\CommandMouseMove.cs" />
     <Compile Include="Commands\Command\CommandPressButton.cs" />
     <Compile Include="Commands\Command\CommandProcess.cs" />
+    <Compile Include="Commands\Command\CommandSleep.cs" />
     <Compile Include="Commands\Command\CommandTab.cs" />
     <Compile Include="Commands\Command\CommandType.cs" />
     <Compile Include="Commands\ICommand.cs" />
